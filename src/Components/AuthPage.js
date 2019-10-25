@@ -17,9 +17,10 @@ const AuthPage = () => {
     const handlePost = () => {
         if(email.includes('@' && '.') && password.length >= 8) {
             Axios
-                .post('/register/user', {
+                .post('/auth/register', {
                     email,
-                    password
+                    password,
+                    profile_pic: 'https://robohash.org/BE1.png?set=set2&size=150x150'
                 })
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
@@ -32,9 +33,22 @@ const AuthPage = () => {
         }
     }
 
-if (redirect === true) {
-   return  <Redirect to="/add-payment-method" />
-}
+    const handleLogin = () => {
+        Axios
+            .post('/auth/login', {email: email, password: password})
+            .then(res => {
+                let resultEmail = res.data.email;
+
+                if(resultEmail === email) {
+                    send()
+                }
+            })
+            .catch(err => console.log(err))
+    }
+
+    if (redirect === true) {
+    return  <Redirect to="/dashboard" />
+    }
     
     return(
         <div>
@@ -52,8 +66,8 @@ if (redirect === true) {
 
                         <br></br>
                     
-                        <button  className='sign-up-form-button-2'>Login</button>
-                        <button  onClick={handlePost} className='sign-up-form-button-2'>Register</button>
+                        <button onClick={handleLogin} className='sign-up-form-button-2'>Login</button>
+                        <button onClick={handlePost} className='sign-up-form-button-2'>Register</button>
                         
                     </div>
 
