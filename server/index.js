@@ -25,7 +25,7 @@ app.use(session({
 app.post('/auth/login', authCtrl.login)
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/logout', authCtrl.logout)
-app.post('/auth/user', authCtrl.getUser)
+app.get('/auth/user', authCtrl.getUser)
 
 const port = SERVER_PORT;
 app.listen(port, () => console.log(`Server running on port ${port}`))

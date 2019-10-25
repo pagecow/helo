@@ -1,8 +1,11 @@
 const bcrypt = require('bcryptjs');
+let loggedInUser = {email: '', profile_pic: ''}
 
 module.exports = {
     register: async(req, res) => {
         const {email, password, profile_pic} = req.body;
+        loggedInUser.email = email;
+        loggedInUser.profile_pic = profile_pic;
         const db = req.app.get('db');
         const {session} = req;
 
@@ -18,11 +21,13 @@ module.exports = {
         newUser = newUser[0];
         // delete newUser.password; - if the db is returning the password
         session.user = newUser;
+        loggedInUser = session.user;
         res.status(201).send(session.user);
     },
     login: async(req, res) => {
-        console.log(req.body)
-        const {email, password} = req.body;
+        const {email, password, profile_pic} = req.body;
+        loggedInUser.email = email;
+        loggedInUser.profile_pic = profile_pic;
         const db = req.app.get('db');
         const {session} = req;
 
@@ -38,18 +43,15 @@ module.exports = {
         if(authenticated){
             delete user.password;
             session.user = user;
+            loggedInUser = session.user;
             res.status(202).send(session.user);
         } else {
             res.status(401).send("Incorrect Password");
         }
     },
     getUser: (req, res) => {
-        const {user} = req.session;
-        if(user){
-            res.status(200).send(user)
-        } else {
-            res.status(500).send('User not on session');
-        }
+        console.log(loggedInUser);
+        res.status(200).send(loggedInUser)
     },
     logout: (req, res) => {
         req.session.destroy();

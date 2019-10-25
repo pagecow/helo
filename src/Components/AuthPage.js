@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import Axios from 'axios';
 import { Redirect } from "react-router-dom";
 
@@ -70,9 +69,6 @@ const AuthPage = () => {
                         <button onClick={handlePost} className='sign-up-form-button-2'>Register</button>
                         
                     </div>
-
-
-
             </div>
         </div>
     )
