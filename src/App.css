@@ -51,12 +51,13 @@
 
 .sign-up-form-button-2 {
   margin-top: 20px;
+  margin-left: 25px;
   background-color: #403D39;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  height: 40px;
-  width: 278px;
+  height: 30px;
+  width: 100px;
   border-radius: 5px;
   border: 0px;
   outline: 0px;    

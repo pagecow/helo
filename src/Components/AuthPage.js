@@ -52,7 +52,8 @@ if (redirect === true) {
 
                         <br></br>
                     
-                        <button  onClick={handlePost} className='sign-up-form-button-2'>CREATE ACCOUNT</button>
+                        <button  className='sign-up-form-button-2'>Login</button>
+                        <button  onClick={handlePost} className='sign-up-form-button-2'>Register</button>
                         
                     </div>
 
