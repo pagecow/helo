@@ -30,6 +30,7 @@ app.get('/auth/user', authCtrl.getUser)
 
 app.post('/api/create/post', postCtrl.createPost)
 app.get('/api/get/post', postCtrl.getPost)
+app.delete('/delete/post/:id', postCtrl.delete)
 
 const port = SERVER_PORT;
 app.listen(port, () => console.log(`Server running on port ${port}`))

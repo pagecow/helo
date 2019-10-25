@@ -102,13 +102,15 @@ margin-bottom: 0px;
 #dashboard {
   display: flex;
   background-color: rgb(244, 240, 240);
+  height: auto;
 }
 
 #dashboard-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  float: left;
+  height: auto;
   width: 15%;
   padding-top: 20px;
   background: 
@@ -117,6 +119,13 @@ margin-bottom: 0px;
   linear-gradient(-90deg, #FF9770 100%, #FF9770 65%, transparent 20% )
   ;
   box-shadow: 3px 0px 10px rgb(87, 87, 87);
+}
+
+#dash-posts {
+  /* display: flex;
+  flex-direction: column; */
+  align-items: center;
+  width: 80%;
 }
 
 #profile-pic {
@@ -151,8 +160,27 @@ margin-bottom: 0px;
 }
 
 #post-box {
-  width: 700px;
-  height: 100px;
+  width: 500px;
+  height: 500px;
+  margin-left: 50px;
+  float: right;
+  border: 1px black solid;
+  margin: 10px;
+  padding-left: 20px;
+}
+
+.post-delete-button {
+  margin-top: 10px;
+  /* margin-left: 90px; */
+  background-color: #403D39;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  height: 30px;
+  width: 405px;
+  border-radius: 5px;
+  border: 0px;
+  outline: 0px;
 }
 
 

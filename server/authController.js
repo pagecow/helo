@@ -50,7 +50,6 @@ module.exports = {
         }
     },
     getUser: (req, res) => {
-        console.log(loggedInUser);
         res.status(200).send(loggedInUser)
     },
     logout: (req, res) => {
