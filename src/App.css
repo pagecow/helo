@@ -1,22 +1,95 @@
-.App {
-  text-align: center;
-}
+/* AuthPage */
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sign-up-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  padding-top: 7%;
+  background: 
+  linear-gradient(45deg,  transparent 0%, transparent 57%, #FF70A6 100%),
+  linear-gradient(-45deg, #FFD670 0%,  #FF70A6 0.3%, #E9FF70 112%,  transparent 11% ),
+  linear-gradient(-90deg, #FF9770 100%, #FF9770 65%, transparent 20% )
+  ;
+}
+
+.step-one-header {
+  margin-bottom: 0px;
+  font-size: 33px;
+  font-weight: 600;
+}
+
+.step-one-sub-header {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 90px;
+  font-weight: 600;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.step-one-sub-header-2 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.step-one-sub-header-3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+.sign-up-inputs {
+  height: 30px;
+  width: 274.85px;
+  font-size: 15px;
+  margin-top: 15px;
+  border: 0px;
+  border-radius: 3px;
+}
+
+.sign-up-form-button-2 {
+  margin-top: 20px;
+  background-color: #403D39;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  width: 278px;
+  border-radius: 5px;
+  border: 0px;
+  outline: 0px;    
+}
+
+.sign-up-form-button-2:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation-delay: 1s;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+
+10%, 90% {
+  transform: translate3d(-1px, 0, 0);
+}
+
+20%, 80% {
+  transform: translate3d(2px, 0, 0);
+}
+
+30%, 50%, 70% {
+  transform: translate3d(-4px, 0, 0);
+}
+
+40%, 60% {
+  transform: translate3d(4px, 0, 0);
+}
+}
+
+.signup-error-message {
+color: rgb(237, 65, 65);
+margin-bottom: 0px;
 }
