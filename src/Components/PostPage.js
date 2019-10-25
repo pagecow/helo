@@ -8,29 +8,42 @@ class PostPage extends React.Component {
         super();
 
         this.state = {
-            email: '',
-            profile_pic: '',
-            postPic: 'https://static.thenounproject.com/png/261694-200.png'
+            post_title: '',
+            post_image: '',
+            post_content: ''
         }
     }
 
-    componentDidMount(){
+    handleTitleChange = (value) => {
+        this.setState({
+            post_title: value
+        })
+    }
+
+    handleImageChange = (value) => {
+        this.setState({
+            post_image: value
+        })
+    }
+
+    handleContentChange = (value) => {
+        this.setState({
+            post_content: value
+        })
+    }
+
+    handlePost = () => {
         Axios
-            .get('/auth/user')
-            .then(res => {
-                const {email, profile_pic} = res.data;
-                this.setState({
-                    email,
-                    profile_pic
-                })
+            .post('/api/create/post', {
+                post_title: this.state.post_title,
+                post_image: this.state.post_image,
+                post_content: this.state.post_content,
             })
-            
     }
     
     render(){
         const profile_pic = this.state.profile_pic;
         const email = this.state.email;
-        const postPic = this.state.postPic
 
         return(
             <div id='dashboard'>
@@ -46,15 +59,15 @@ class PostPage extends React.Component {
                     <h1>New Post</h1><br/>
                     
                     <h3>Title:</h3><br/>
-                    <input className='post-title'/><br/>
-
-                    {/* <img className='post-image' src={postPic}/> */}
+                    <input className='post-title' onChange={e => this.handleTitleChange(e.target.value)}/><br/>
                     
                     <h3>Image URL:</h3><br/>
-                    <input className='post-image-url'/>
+                    <input className='post-image-url' onChange={e => this.handleImageChange(e.target.value)}/>
                     
                     <h3>Content:</h3><br/>
-                    <textarea className='content'/>
+                    <textarea className='content' onChange={e => this.handleContentChange(e.target.value)}/><br/>
+
+                    <Link to='/dashboard'><button className='post-button' onClick={this.handlePost}>Post</button></Link>
                 </form>
             </div>
         )

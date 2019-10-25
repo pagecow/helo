@@ -150,6 +150,11 @@ margin-bottom: 0px;
   margin-top: 200px;
 }
 
+#post-box {
+  width: 700px;
+  height: 100px;
+}
+
 
 /* PostPage */
 
@@ -178,5 +183,19 @@ margin-bottom: 0px;
 .content {
   resize: none;
   width: 740px;
-  height: 200px;
+  height: 180px;
+}
+
+.post-button {
+  margin-top: 10px;
+  margin-left: 647px;
+  background-color: #403D39;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  border: 0px;
+  outline: 0px;
 }
