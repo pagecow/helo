@@ -100,6 +100,7 @@ margin-bottom: 0px;
 /* Dashboard */
 
 #dashboard {
+  display: flex;
   background-color: rgb(244, 240, 240);
 }
 
@@ -147,4 +148,35 @@ margin-bottom: 0px;
 #logout {
   height: 70px;
   margin-top: 200px;
+}
+
+
+/* PostPage */
+
+#post-form {
+  margin-left: 200px;
+  margin-top: 50px;
+  padding-left: 50px;
+  height: 90vh;
+  width: 800px;
+  border: 1px black solid;
+}
+
+.post-title {
+  width: 740px;
+}
+
+.post-image {
+  width: 200px;
+  margin-left: 250px;
+}
+
+.post-image-url {
+  width: 740px;
+}
+
+.content {
+  resize: none;
+  width: 740px;
+  height: 200px;
 }
