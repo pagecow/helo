@@ -15,11 +15,12 @@ module.exports = {
             .catch(err => console.log(err))
     },
     delete: (req, res) => {
-        console.log(req.params)
-        const db = req.app.get('db');
-        const {post_id} = req.params;
         
-        db.delete_post(post_id)
+        const db = req.app.get('db');
+        const {id} = req.params;
+        console.log(id)
+        
+        db.delete_post(id)
             .then(results => res.status(200).send(results))
             .catch(err => console.log(err))
         
